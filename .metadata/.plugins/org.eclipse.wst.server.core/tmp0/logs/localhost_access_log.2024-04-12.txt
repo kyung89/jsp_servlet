@@ -1,0 +1,8 @@
+127.0.0.1 - - [12/Apr/2024:16:43:49 +0900] "GET / HTTP/1.1" 404 808
+0:0:0:0:0:0:0:1 - - [12/Apr/2024:16:43:49 +0900] "GET /MustHaveJSP/ HTTP/1.1" 404 824
+0:0:0:0:0:0:0:1 - - [12/Apr/2024:16:43:49 +0900] "GET /favicon.ico HTTP/1.1" 404 819
+0:0:0:0:0:0:0:1 - - [12/Apr/2024:16:45:00 +0900] "GET /MustHaveJSP/HelloJSP.jsp HTTP/1.1" 200 134
+0:0:0:0:0:0:0:1 - - [12/Apr/2024:16:53:12 +0900] "GET /MustHaveJSP/HelloJSP.jsp HTTP/1.1" 200 228
+0:0:0:0:0:0:0:1 - - [12/Apr/2024:16:53:27 +0900] "GET /MustHaveJSP/HelloJSP.jsp HTTP/1.1" 200 227
+0:0:0:0:0:0:0:1 - - [12/Apr/2024:17:27:31 +0900] "GET /MustHaveJSP/HelloJSP.jsp HTTP/1.1" 200 227
+0:0:0:0:0:0:0:1 - - [12/Apr/2024:17:48:59 +0900] "GET /MustHaveJSP/StaticWeb.html HTTP/1.1" 200 171

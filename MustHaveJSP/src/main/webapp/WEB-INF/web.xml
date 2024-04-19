@@ -14,4 +14,25 @@
   	<param-name>INIT_PARAM</param-name>
   	<param-value>web.xml 에 저장한 초기화 매개변수</param-value>
   </context-param>
+  
+  <context-param>
+  	<param-name>MySQLDriver</param-name>
+  	<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQLURL</param-name>
+  	<param-value>jdbc:mysql://localhost:3306/musthave</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQLId</param-name>
+  	<param-value>musthave</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQLPwd</param-name>
+  	<param-value>tiger</param-value>
+  </context-param>
+  
 </web-app>

@@ -5,4 +5,5 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.ServletContext"/>
 </qualifiedTypeNameHistroy>

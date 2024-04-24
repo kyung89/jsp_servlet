@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="J2EE_EXPORT_OVERWRITE" value="false"/>
+	<item key="J2EE_EXPORT_SOURCE" value="false"/>
 	<list key="MRU_RUNTIME_STORE">
 		<item value="Apache Tomcat v10.1"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\Users\user\Documents\교육과정 관련\Sevlet&amp;JSP_이상현 교수님\WAR파일\MustHaveJSP.war"/>
 	</list>
 </section>

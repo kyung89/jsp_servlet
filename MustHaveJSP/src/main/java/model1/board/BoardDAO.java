@@ -70,33 +70,29 @@ public class BoardDAO extends JDBConnect {
 	public List<BoardDTO> selectListPage(Map<String, Object> map) {
 		List<BoardDTO> bbs = new Vector<BoardDTO>();
 		
-		//SELECT * FROM (
-		//	    SELECT Tb.*, ROW_NUMBER() OVER (ORDER BY num DESC) AS rNum FROM (
-		//	        SELECT * FROM BOARD
-		//	    ) AS Tb
-		//	) AS SubQuery WHERE rNum BETWEEN ? AND ?;
-		
-		//String query = "SELECT * FROM ( " + " SELECT Tb.*, ROWNUM rNum FROM ( " + " SELECT * FROM BOARD ";
+		//String query = "SELECT * FROM ( " + " SELECT Tb.*, ROW_NUMBER() OVER (ORDER BY num DESC) AS rNum FROM ( " + " SELECT * FROM BOARD ";
 		//
 		//if (map.get("searchWord") != null) {
 		//	query += " WHERE " + map.get("searchField") + " " + " LIKE '%" + map.get("searchWord") + "%'";
 		//}
-		//query += " ORDER BY num DESC " + " ) Tb " + " ) " + " WHERE rNum BETWEEN ? AND ?";
+		//query += " ORDER BY num DESC " + " ) AS Tb " + " ) " + " AS SubQuery WHERE rNum BETWEEN ? AND ?";
 		
-		String query = "SELECT * FROM ( " + " SELECT Tb.*, ROW_NUMBER() OVER (ORDER BY num DESC) AS rNum FROM ( " + " SELECT * FROM BOARD ";
+		
+		String query = "SELECT * FROM BOARD ";
 		
 		if (map.get("searchWord") != null) {
 			query += " WHERE " + map.get("searchField") + " " + " LIKE '%" + map.get("searchWord") + "%'";
 		}
-		query += " ORDER BY num DESC " + " ) AS Tb " + " ) " + " AS SubQuery WHERE rNum BETWEEN ? AND ?";
+		query += " ORDER BY num DESC LIMIT ?,?";
 		
-		System.out.println("[query]");
-		System.out.println(query);
+		//System.out.println(query);
 		
 		try {
 			psmt = con.prepareStatement(query);
-			psmt.setString(1, map.get("start").toString());
-			psmt.setString(2, map.get("end").toString());
+			//psmt.setString(1, map.get("start").toString());
+			//psmt.setString(2, map.get("end").toString());
+			psmt.setInt(1, (int)map.get("start"));
+			psmt.setInt(2, (int)map.get("end"));
 			
 			rs = psmt.executeQuery();
 			

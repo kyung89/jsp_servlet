@@ -49,4 +49,26 @@
   	<param-value>5</param-value>
   </context-param>
   
+  <servlet>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<servlet-class>servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<url-pattern>/12Servlet/HelloServlet.do</url-pattern>
+  </servlet-mapping>
+  
+  <!--<servlet>
+  	<servlet-name>MemberAuth</servlet-name>
+  	<servlet-class>servlet.MemberAuth</servlet-class>
+  	  <init-param>
+  		<param-name>admin_id</param-name>
+  		<param-value>nakja</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MemberAuth</servlet-name>
+  	<url-pattern>/12Servlet/MemberAuth.mvc</url-pattern>
+  </servlet-mapping>-->
+  
 </web-app>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>ServletStudy</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+   <context-param>
+  	<param-name>INIT_PARAM</param-name>
+  	<param-value>web.xml 에 저장한 초기화 매개변수</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQLDriver</param-name>
+  	<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQLURL</param-name>
+  	<param-value>jdbc:mysql://localhost:3306/musthave</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQLId</param-name>
+  	<param-value>musthave</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQLPwd</param-name>
+  	<param-value>tiger</param-value>
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>MyServlet01</servlet-name>
+  	<servlet-class>edu.pnu.servlet.MyServlet01</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MyServlet01</servlet-name>
+  	<url-pattern>/myservlet01</url-pattern>
+  </servlet-mapping>
+</web-app>

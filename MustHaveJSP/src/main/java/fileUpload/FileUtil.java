@@ -60,7 +60,8 @@ public class FileUtil {
 	
 	public static void download(HttpServletRequest req, HttpServletResponse resp, String directory, String sfileName, String ofileName) {
 		// 맞는지 체크 후 수정하기
-		String sDirectory = req.getServletContext().getRealPath(directory);
+		//String sDirectory = req.getServletContext().getRealPath(directory);
+		String sDirectory = "C:/Temp"; ///Uploads2"
 		
 		try {
 			File file = new File(sDirectory, sfileName);

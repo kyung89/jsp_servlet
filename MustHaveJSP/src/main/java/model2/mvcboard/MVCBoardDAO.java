@@ -58,6 +58,10 @@ public class MVCBoardDAO extends JDBConnect {
 		
 		query += " ORDER BY idx DESC LIMIT ?,?";
 		
+		System.out.println(query);
+		System.out.println(map.get("start"));
+		System.out.println(map.get("end"));
+		
 		try {
 			psmt = con.prepareStatement(query);
 			psmt.setInt(1, (int)map.get("start"));
@@ -170,11 +174,14 @@ public class MVCBoardDAO extends JDBConnect {
 		
 		try {
 			String sql=  "SELECT COUNT(*) FROM MVCBOARD WHERE PASS=? AND IDX=?";
-			psmt.getConnection().prepareStatement(sql);
+			psmt= con.prepareStatement(sql);
 			psmt.setString(1, pass);
 			psmt.setString(2, idx);
 			rs = psmt.executeQuery();
 			rs.next();
+			
+			System.out.println("pass:" + pass);
+			System.out.println("idx:" + idx);
 			
 			if(rs.getInt(1) == 0) {
 				isCorr = false;
@@ -197,6 +204,30 @@ public class MVCBoardDAO extends JDBConnect {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("게시물 삭제 중 예외 발생");
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public int updatePost(MVCBoardDTO dto) {
+		int result = 0;
+		try {
+			String query = "UPDATE MVCBOARD SET TITLE=?, NAME=?, CONTENT=?, OFILE=?, SFILE=? WHERE IDX=? AND PASS=?";
+			
+			psmt = con.prepareStatement(query);
+			
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getName());
+			psmt.setString(3, dto.getContent());
+			psmt.setString(4, dto.getOfile());
+			psmt.setString(5, dto.getSfile());
+			psmt.setString(6, dto.getIdx());
+			psmt.setString(7, dto.getPass());
+			
+			result = psmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("게시물 수정 중 예외 발생");
 			e.printStackTrace();
 		}
 		return result;

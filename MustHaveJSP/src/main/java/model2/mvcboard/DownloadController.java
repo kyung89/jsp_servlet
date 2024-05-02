@@ -19,7 +19,7 @@ public class DownloadController extends HttpServlet {
 		String sfile = req.getParameter("sfile");
 		String idx = req.getParameter("idx");
 		
-		FileUtil.download(req, resp, "/Uploads2", sfile, ofile);
+		FileUtil.download(req, resp, "/Uploads", sfile, ofile);
 		
 		MVCBoardDAO dao = new MVCBoardDAO();
 		dao.downCountPlus(idx);

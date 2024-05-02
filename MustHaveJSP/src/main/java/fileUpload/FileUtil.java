@@ -59,9 +59,7 @@ public class FileUtil {
 	}
 	
 	public static void download(HttpServletRequest req, HttpServletResponse resp, String directory, String sfileName, String ofileName) {
-		// 맞는지 체크 후 수정하기
-		//String sDirectory = req.getServletContext().getRealPath(directory);
-		String sDirectory = "C:/Temp"; ///Uploads2"
+		String sDirectory = req.getServletContext().getRealPath(directory);
 		
 		try {
 			File file = new File(sDirectory, sfileName);
@@ -97,6 +95,14 @@ public class FileUtil {
 			// TODO: handle exception
 			System.out.println("예외가 발생하였습니다.");
 			e.printStackTrace();
+		}
+	}
+	
+	public static void deleteFile(HttpServletRequest req, String directory, String filename) {
+		String sDirectory = req.getServletContext().getRealPath(directory);
+		File file = new File(sDirectory + File.separator + filename);
+		if (file.exists()) {
+			file.delete();
 		}
 	}
 }

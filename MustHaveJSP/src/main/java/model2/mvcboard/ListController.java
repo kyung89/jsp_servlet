@@ -32,14 +32,14 @@ public class ListController extends HttpServlet {
 		
 		ServletContext application = getServletContext();
 		int pageSize = Integer.parseInt(application.getInitParameter("POSTS_PER_PAGE"));
-		int blockPage = Integer.parseInt(application.getInitParameter("POSTS_PER_BLOCK"));
+		int blockPage = Integer.parseInt(application.getInitParameter("PAGES_PER_BLOCK"));
 		
 		int pageNum = 1;
 		String pageTemp = req.getParameter("pageNum");
 		if(pageTemp != null && !pageTemp.equals(""))
 			pageNum = Integer.parseInt(pageTemp);
 		
-		int start = (pageNum - 1) * pageSize + 1;
+		int start = (pageNum - 1) * pageSize;
 		int end = pageNum * pageSize;
 		map.put("start", start);
 		map.put("end", end);

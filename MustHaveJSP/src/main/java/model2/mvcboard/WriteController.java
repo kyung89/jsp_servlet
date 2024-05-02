@@ -28,7 +28,9 @@ public class WriteController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String saveDirectory = "C:/Temp/Uploads2";
+		String saveDirectory = req.getServletContext().getRealPath("/Uploads");
+		
+		System.out.println(saveDirectory);
 		
 		String originalFileName = "";
 		

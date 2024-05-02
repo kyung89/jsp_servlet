@@ -9,7 +9,7 @@
 <style>a{text-decoration: none;}</style>
 </head>
 <body>
-	<h2>파일 첨부형 게시판-  목록 보기(List)</h2>
+	<h2>파일 첨부형 게시판 - 목록 보기(List)</h2>
 	
 	<form method="get">
 		<table border="1" width="90%">
@@ -47,7 +47,7 @@
 		<c:forEach items="${ boardLists }" var="row" varStatus="loop">
 		<tr align="center">
 			<td>
-				${ map.totalCount - ((map.pageNum-1) * map.pageSize) + loop.index) }
+				${ map.totalCount - (((map.pageNum-1) * map.pageSize) + loop.index) }
 			</td>
 			<td align="left">
 				<a href="../mvcboard/view.do?idx=${ row.idx }">${ row.title }</a>
